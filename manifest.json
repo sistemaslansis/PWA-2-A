@@ -1,7 +1,7 @@
 {
-  "name": "#ProgramadorFitness",
-  "short_name": "#ProgramadorFitness",
-  "description": "Bienvenid@s a #ProgramadorFitness, serie de videos, donde te daré consejos para llevar una vida saludable y evitar el sedentarismo. Recuerda... mente sana en cuerpo sano :)",
+  "name": "#PWA-2",
+  "short_name": "#PWA-2",
+  "description": "Bienvenid@s a #PWA-2, serie de videos, donde te daré consejos para llevar una vida saludable y evitar el sedentarismo. Recuerda... mente sana en cuerpo sano :)",
   "background_color": "#2B2B2B",
   "theme_color": "#F0DB4F",
   "orientation": "portrait",
