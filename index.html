@@ -2,21 +2,22 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PWA-2</title>
-  <meta name="description" content="Bienvenid@s a #ProgramadorFitness, serie de videos, donde te daré consejos para llevar una vida saludable y evitar el sedentarismo. Recuerda... mente sana en cuerpo sano :)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PWA-2</title>
+    <meta name="description"
+        content="Bienvenid@s a #ProgramadorFitness, serie de videos, donde te daré consejos para llevar una vida saludable y evitar el sedentarismo. Recuerda... mente sana en cuerpo sano :)">
 
-  <meta name="theme-color" content="#F0DB4F">
-  <meta name="MobileOptimized" content="width">
-  <meta name="HandheldFriendly" content="true">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="shortcut icon" type="image/png" href="./img/ProgramadorFitness.png">
-  <link rel="apple-touch-icon" href="./ProgramadorFitness.png">
-  <link rel="apple-touch-startup-image" href="./ProgramadorFitness.png">
-  <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#F0DB4F">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" type="image/png" href="./img/ProgramadorFitness.png">
+    <link rel="apple-touch-icon" href="./ProgramadorFitness.png">
+    <link rel="apple-touch-startup-image" href="./ProgramadorFitness.png">
+    <link rel="manifest" href="./manifest.json">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
@@ -24,10 +25,10 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="./css/mdb.min.css">
-    <link rel="stylesheet" href="./css/loading.css"> 
+    <link rel="stylesheet" href="./css/loading.css">
     <link rel="stylesheet" href="./css/style.css">
-  <!-- <link rel="stylesheet" href="./style.css"> -->
-</head> 
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
 
 <body class="fixed-sn white-skin">
 
@@ -193,6 +194,8 @@
             <div class="container bg-danger" :class="clase">
                 <h1>{{titulo}}</h1>
 
+                <button>Share MDN!</button>
+
                 <input type="text" v-model="nuevafruta" @keyup.enter="agregarFruta">
                 <button @click="agregarFruta">Agregar</button>
                 <ul class="pt-3">
@@ -251,7 +254,7 @@
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="./js/bootstrap.js"></script>
 
-       <!-- BueJs -->
+    <!-- BueJs -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- vue-cookies -->
@@ -279,15 +282,36 @@
                     visibility: "hidden",
                     opacity: "0"
                 })
-            }, 2000);
+            }, 600);
 
         });
-        
     </script>
 
-    
- 
-    
+
+    <script>
+        let shareData = {
+            title: 'MDN',
+            text: 'Learn web development on MDN!',
+            url: 'https://developer.mozilla.org',
+        }
+
+        const btn = document.querySelector('button');
+        const resultPara = document.querySelector('.result');
+
+        btn.addEventListener('click', () => {
+            navigator.share(shareData)
+                .then(() =>
+                    resultPara.textContent = 'MDN shared successfully'
+                )
+                .catch((e) =>
+                    resultPara.textContent = 'Error: ' + e
+                )
+        });
+    </script>
+
+
+
+
     <!-- <script src="./script.js"></script> -->
 </body>
 
